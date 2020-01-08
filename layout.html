@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My words app</title>
+</head>
+<body>
+	<h1>{{.PageTitle}}</h1>
+	<ul>
+	    {{range .WordForms}}
+	        <li>{{.Form}}</li>
+	    {{end}}
+	</ul>
+</body>
+</html>

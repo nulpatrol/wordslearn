@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  mysql:
+    image: mysql:5.7.21
+    ports:
+      - "3308:3306/tcp"
+    volumes:
+      - mysql:/var/lib/mysql
+    networks:
+      - platform
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+      MYSQL_USER: enigma
+      MYSQL_PASSWORD: secret
+      MYSQL_DATABASE: words-app
+
+volumes:
+  mysql:
+    driver: local
+
+networks:
+  platform:
+    driver: bridge
